@@ -1,0 +1,49 @@
+{
+  "name": "agente-whatsapp",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": "22.x || 24.x"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "start:bot": "tsx scripts/start-bot.ts",
+    "start:all": "concurrently --kill-others --names BOT,WEB --prefix-colors yellow,cyan \"npm run start:bot\" \"npm run start\"",
+    "postinstall": "node scripts/patch-baileys.cjs"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "npm:baileys@7.0.0-rc14",
+    "better-sqlite3": "13.0.3",
+    "concurrently": "^9.2.1",
+    "next": "^16.0.0",
+    "openai": "^5.20.0",
+    "pino": "^9.9.0",
+    "qrcode": "^1.5.4",
+    "qrcode-terminal": "^0.12.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tsx": "^4.20.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.18.6",
+    "@types/qrcode": "^1.5.5",
+    "@types/qrcode-terminal": "^0.12.2",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "eslint": "^9.35.0",
+    "eslint-config-next": "^16.0.0",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2"
+  },
+  "allowScripts": {
+    "baileys@7.0.0-rc14": true,
+    "esbuild@0.28.2": true,
+    "protobufjs@7.6.6": true,
+    "unrs-resolver@1.12.2": true
+  }
+}

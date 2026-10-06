@@ -1,0 +1,11 @@
+node_modules/
+.next/
+data/
+auth/
+.env
+.env.*
+!.env.example
+*.db-shm
+*.db-wal
+npm-debug.log*
+tsconfig.tsbuildinfo
